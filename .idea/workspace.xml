@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef865a1-c44f-4180-898d-e62004340472" name="Changes" comment="Project Creation">
+    <list default="true" id="7ef865a1-c44f-4180-898d-e62004340472" name="Changes" comment="removed donation on main tab">
+      <change afterPath="$PROJECT_DIR$/static/LOGO_cropped.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
@@ -39,6 +40,9 @@
   "associatedIndex": 6
 }]]></component>
   <component name="ProjectId" id="35ffSxMbF4bXDdzmG41RI3Kv5EG" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,6 +56,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/dl-jo/PycharmProjects/Daynation/static",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,6 +65,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dl-jo\PycharmProjects\Daynation\static" />
+      <recent name="C:\Users\dl-jo\PycharmProjects\Daynation\templates" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,7 +86,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1763506052339</updated>
-      <workItem from="1763506053358" duration="2650000" />
+      <workItem from="1763506053358" duration="3961000" />
     </task>
     <task id="LOCAL-00001" summary="Project Creation">
       <option name="closed" value="true" />
@@ -85,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763507032900</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed donation on main tab">
+      <option name="closed" value="true" />
+      <created>1763508786366</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763508786366</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +112,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project Creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project Creation" />
+    <MESSAGE value="removed donation on main tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed donation on main tab" />
   </component>
 </project>

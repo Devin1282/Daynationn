@@ -106,19 +106,12 @@
             margin-bottom: 30px;
         }
 
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary-color);
-            margin: 0 auto 15px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: white;
+        #profile-img {
+            width: 50%;
+            height: auto; /* Maintains aspect ratio */
+            display: block; /* Ensures the image is displayed as a block element */
+            margin-left: auto; /* Centers the image horizontally */
+            margin-right: auto; /* Centers the image horizontally */
         }
 
         .profile h1 {
@@ -313,6 +306,23 @@
             font-weight: 500;
         }
 
+        .pc-specs-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .pc-specs {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .pc-specs li {
+            margin: 5px 0; /* Add some vertical spacing between items */
+        }
+
+
         [data-theme="dark"] .theme-toggle-label {
             color: #f0f0f0;
         }
@@ -352,7 +362,7 @@
     </style>
 </head>
 <body>
-    <div class="theme-toggle-container">
+    <div class="theme-toggle-container" style="display: none">
         <label class="theme-toggle">
             <input type="checkbox" id="theme-toggle">
             <span class="slider"></span>
@@ -369,9 +379,7 @@
 
         <div class="tab-content active" id="home">
             <div class="profile">
-                <div class="profile-img">
-                    <i class="fas fa-user"></i>
-                </div>
+                <img id="profile-img" src="../static/LOGO_cropped.png" alt="Profile Picture">
                 <h1>Daynationn</h1>
                 <p>Content Creator & Streamer</p>
             </div>
@@ -400,6 +408,16 @@
                 <p>My YouTube channel features longer-form content where I dive deep into topics I'm passionate about. Whether you're here for entertainment, education, or just to connect, I'm grateful for your support!</p>
                 <p>Thank you for being part of this journey. Together, we can create amazing content and build a community that supports creativity and positivity.</p>
                 <h2>PC Specs</h2>
+                <div class="pc-specs-container">
+                    <ul class="pc-specs">
+                        <li><i class="fa-solid"></i>CPU: AMD Ryzen 7 5700x</li>
+                        <li><i class="fa-solid"></i>GPU: RTX 5070</li>
+                        <li><i class="fa-solid"></i>RAM: 32GB DDR4-3200</li>
+                        <li><i class="fa-solid"></i>SSD: 2TB NVMe SSD</li>
+                        <li><i class="fa-solid"></i>MB: Gigabyte B450M</li>
+                        <li><i class="fa-solid"></i>Case: NZXT H510</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
