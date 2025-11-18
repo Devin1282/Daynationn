@@ -6,6 +6,29 @@
     <title>Daynationn - Social Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #9b59b6;
+            --accent-color: #e74c3c;
+            --background-color: #f5f7fa;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --border-color: #ecf0f1;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #4a9bff;
+            --secondary-color: #b968d9;
+            --accent-color: #ff4d4d;
+            --background-color: #1a1a2e;
+            --text-color: #f0f0f0;
+            --card-bg: #16213e;
+            --border-color: #2d2d44;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -14,26 +37,29 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            background-color: var(--background-color);
+            color: var(--text-color);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            transition: var(--transition);
         }
 
         .container {
             width: 100%;
             max-width: 500px;
-            background: white;
+            background: var(--card-bg);
             border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 30px var(--shadow-color);
             overflow: hidden;
+            transition: var(--transition);
         }
 
         .tabs {
             display: flex;
-            background: #2c3e50;
+            background: var(--primary-color);
         }
 
         .tab {
@@ -42,18 +68,22 @@
             padding: 15px 0;
             cursor: pointer;
             font-weight: 600;
-            color: #ecf0f1;
-            transition: all 0.3s ease;
+            color: white;
+            transition: var(--transition);
             border-bottom: 3px solid transparent;
         }
 
         .tab.active {
-            background: #3498db;
-            border-bottom: 3px solid #e74c3c;
+            background: var(--secondary-color);
+            border-bottom: 3px solid var(--accent-color);
         }
 
         .tab:hover:not(.active) {
-            background: #34495e;
+            background: #2980b9;
+        }
+
+        [data-theme="dark"] .tab:hover:not(.active) {
+            background: #2c3e50;
         }
 
         .tab-content {
@@ -81,9 +111,9 @@
             height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #3498db;
+            border: 4px solid var(--primary-color);
             margin: 0 auto 15px;
-            background: linear-gradient(45deg, #3498db, #9b59b6);
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -92,7 +122,7 @@
         }
 
         .profile h1 {
-            color: #2c3e50;
+            color: var(--text-color);
             margin-bottom: 5px;
         }
 
@@ -115,15 +145,15 @@
             border-radius: 15px;
             text-decoration: none;
             color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            box-shadow: 0 4px 6px var(--shadow-color);
             font-weight: 600;
             font-size: 16px;
         }
 
         .social-link:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 8px var(--shadow-color);
         }
 
         .social-link i {
@@ -171,7 +201,7 @@
 
         .about-content {
             line-height: 1.6;
-            color: #34495e;
+            color: var(--text-color);
         }
 
         .about-content p {
@@ -183,7 +213,7 @@
         }
 
         .donation-content h2 {
-            color: #2c3e50;
+            color: var(--text-color);
             margin-bottom: 20px;
         }
 
@@ -196,7 +226,7 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 18px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
             border: none;
             cursor: pointer;
@@ -217,9 +247,77 @@
             padding: 20px;
             color: #7f8c8d;
             font-size: 14px;
-            border-top: 1px solid #ecf0f1;
+            border-top: 1px solid var(--border-color);
         }
 
+        /* Dark Mode Toggle */
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .theme-toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .theme-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .theme-toggle-label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 70px;
+            color: var(--text-color);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .theme-toggle-label {
+            color: #f0f0f0;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 500px) {
             .container {
                 border-radius: 15px;
@@ -240,10 +338,28 @@
                 height: 35px;
                 font-size: 16px;
             }
+
+            .theme-toggle-container {
+                top: 10px;
+                right: 10px;
+            }
+
+            .theme-toggle-label {
+                left: 60px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="theme-toggle-container">
+        <label class="theme-toggle">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+        <span class="theme-toggle-label">Dark Mode</span>
+    </div>
+
     <div class="container">
         <div class="tabs">
             <div class="tab active" data-tab="home">Home</div>
@@ -273,10 +389,6 @@
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
-                <a href="https://paypal.me/daynationn" class="social-link paypal" target="_blank">
-                    <i class="fab fa-paypal"></i>
-                    <span>Support Me on PayPal</span>
-                </a>
             </div>
         </div>
 
@@ -287,6 +399,7 @@
                 <p>On TikTok, I create entertaining and engaging videos that showcase my personality and interests. On Twitch, I stream gaming content and interact with my viewers in real-time.</p>
                 <p>My YouTube channel features longer-form content where I dive deep into topics I'm passionate about. Whether you're here for entertainment, education, or just to connect, I'm grateful for your support!</p>
                 <p>Thank you for being part of this journey. Together, we can create amazing content and build a community that supports creativity and positivity.</p>
+                <h2>PC Specs</h2>
             </div>
         </div>
 
@@ -302,7 +415,7 @@
         </div>
 
         <div class="footer">
-            <p>© Daynationn | All Rights Reserved</p>
+            <p>© 2023 Daynationn | All Rights Reserved</p>
         </div>
     </div>
 
@@ -310,7 +423,33 @@
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab');
             const tabContents = document.querySelectorAll('.tab-content');
+            const themeToggle = document.getElementById('theme-toggle');
 
+            // Check for saved theme preference or respect system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeToggle.checked = true;
+            }
+
+            // Toggle theme function
+            function toggleTheme() {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+
+                // Update toggle position
+                themeToggle.checked = newTheme === 'dark';
+            }
+
+            // Add event listener to toggle
+            themeToggle.addEventListener('change', toggleTheme);
+
+            // Tab switching functionality
             tabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     // Remove active class from all tabs and contents
