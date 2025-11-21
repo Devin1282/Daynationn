@@ -22,6 +22,7 @@
             <div class="tab active" data-tab="home">Home</div>
             <div class="tab" data-tab="about">About Me</div>
             <div class="tab" data-tab="donate">Donations</div>
+            <div class="tab" data-tab="snake">Snake</div>
         </div>
 
         <div class="tab-content active" id="home">
@@ -81,8 +82,6 @@
 
         <div class="tab-content" id="snake">
             <div class="game-container">
-                <h2>Welcome, {{ user.username }}!</h2>
-
                 <div class="stats">
                     <div>Current Score: <span id="current-score">0</span></div>
                     <div>High Score: <span id="high-score">{{ user.scores[0].score if user.scores else 0 }}</span></div>
