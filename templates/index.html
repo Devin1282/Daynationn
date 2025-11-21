@@ -5,361 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daynationn - Social Links</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #9b59b6;
-            --accent-color: #e74c3c;
-            --background-color: #f5f7fa;
-            --text-color: #2c3e50;
-            --card-bg: #ffffff;
-            --border-color: #ecf0f1;
-            --shadow-color: rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
+    <link rel="stylesheet" href="../static/style.css">
 
-        [data-theme="dark"] {
-            --primary-color: #4a9bff;
-            --secondary-color: #b968d9;
-            --accent-color: #ff4d4d;
-            --background-color: #1a1a2e;
-            --text-color: #f0f0f0;
-            --card-bg: #16213e;
-            --border-color: #2d2d44;
-            --shadow-color: rgba(0, 0, 0, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            /*align-items: center;*/
-            padding: 20px;
-            transition: var(--transition);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 500px;
-            background: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 15px 30px var(--shadow-color);
-            overflow: hidden;
-            transition: var(--transition);
-        }
-
-        .tabs {
-            display: flex;
-            background: var(--primary-color);
-        }
-
-        .tab {
-            flex: 1;
-            text-align: center;
-            padding: 15px 0;
-            cursor: pointer;
-            font-weight: 600;
-            color: white;
-            transition: var(--transition);
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab.active {
-            background: var(--secondary-color);
-            border-bottom: 3px solid var(--accent-color);
-        }
-
-        .tab:hover:not(.active) {
-            background: #2980b9;
-        }
-
-        [data-theme="dark"] .tab:hover:not(.active) {
-            background: #2c3e50;
-        }
-
-        .tab-content {
-            padding: 25px;
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .profile {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        #profile-img {
-            width: 50%;
-            height: auto; /* Maintains aspect ratio */
-            display: block; /* Ensures the image is displayed as a block element */
-            margin-left: auto; /* Centers the image horizontally */
-            margin-right: auto; /* Centers the image horizontally */
-        }
-
-        .profile h1 {
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-
-        .profile p {
-            color: #7f8c8d;
-            font-size: 14px;
-        }
-
-        .social-links {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            border-radius: 15px;
-            text-decoration: none;
-            color: white;
-            transition: var(--transition);
-            box-shadow: 0 4px 6px var(--shadow-color);
-            font-weight: 600;
-            font-size: 16px;
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 8px var(--shadow-color);
-        }
-
-        .social-link i {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 18px;
-        }
-
-        .tiktok {
-            background: linear-gradient(45deg, #000000, #ff0055);
-        }
-
-        .tiktok i {
-            background: #ff0055;
-        }
-
-        .twitch {
-            background: linear-gradient(45deg, #6441a5, #2a0845);
-        }
-
-        .twitch i {
-            background: #6441a5;
-        }
-
-        .youtube {
-            background: linear-gradient(45deg, #ff0000, #ff6600);
-        }
-
-        .youtube i {
-            background: #ff0000;
-        }
-
-        .paypal {
-            background: linear-gradient(45deg, #003087, #009cde);
-        }
-
-        .paypal i {
-            background: #003087;
-        }
-
-        .about-content {
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        .about-content p {
-            margin-bottom: 15px;
-        }
-
-        .donation-content {
-            text-align: center;
-        }
-
-        .donation-content h2 {
-            color: var(--text-color);
-            margin-bottom: 20px;
-        }
-
-        .donation-btn {
-            display: inline-block;
-            background: #003087;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(0, 48, 135, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .donation-btn:hover {
-            background: #002266;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0, 48, 135, 0.4);
-        }
-
-        .donation-btn i {
-            margin-right: 10px;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            color: #7f8c8d;
-            font-size: 14px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* Dark Mode Toggle */
-        .theme-toggle-container {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .theme-toggle {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .theme-toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .slider {
-            background-color: var(--primary-color);
-        }
-
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-        .theme-toggle-label {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 70px;
-            color: var(--text-color);
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .pc-specs-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .pc-specs {
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        .pc-specs li {
-            margin: 5px 0; /* Add some vertical spacing between items */
-        }
-
-
-        [data-theme="dark"] .theme-toggle-label {
-            color: #f0f0f0;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 500px) {
-            .container {
-                border-radius: 15px;
-            }
-
-            .tab {
-                padding: 12px 0;
-                font-size: 14px;
-            }
-
-            .social-link {
-                padding: 12px;
-                font-size: 14px;
-            }
-
-            .social-link i {
-                width: 35px;
-                height: 35px;
-                font-size: 16px;
-            }
-
-            .theme-toggle-container {
-                top: 10px;
-                right: 10px;
-            }
-
-            .theme-toggle-label {
-                left: 60px;
-                font-size: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="theme-toggle-container" style="display: none">
@@ -432,57 +79,54 @@
             </div>
         </div>
 
+        <div class="tab-content" id="snake">
+            <div class="game-container">
+                <h2>Welcome, {{ user.username }}!</h2>
+
+                <div class="stats">
+                    <div>Current Score: <span id="current-score">0</span></div>
+                    <div>High Score: <span id="high-score">{{ user.scores[0].score if user.scores else 0 }}</span></div>
+                </div>
+
+                <canvas id="game-canvas" width="400" height="400"></canvas>
+
+                <div class="controls">
+                    <button id="start-btn">Start Game</button>
+                    <button id="pause-btn">Pause</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+
+                <div class="mobile-controls">
+                    <div class="mobile-btn up-btn">↑</div>
+                    <div class="mobile-btn left-btn">←</div>
+                    <div class="mobile-btn right-btn">→</div>
+                    <div class="mobile-btn down-btn">↓</div>
+                </div>
+
+                <div class="instructions">
+                    <h2>How to Play</h2>
+                    <ul>
+                        <li>Use <strong>Arrow Keys</strong> or <strong>On-screen Controls</strong> to move the snake</li>
+                        <li>Eat the <span style="color: #FF5252;">red food</span> to grow and earn points</li>
+                        <li>Avoid hitting the walls or the snake's own body</li>
+                        <li>Each food gives you <strong>10 points</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="game-over" id="game-over">
+                <h2>Game Over!</h2>
+                <p>Your score: <span id="final-score">0</span></p>
+                <button id="restart-btn">Play Again</button>
+            </div>
+        </div>
+
+
         <div class="footer">
-            <p>© 2023 Daynationn | All Rights Reserved</p>
+            <p>Daynationn</p>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const tabs = document.querySelectorAll('.tab');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const themeToggle = document.getElementById('theme-toggle');
-
-            // Check for saved theme preference or respect system preference
-            const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-            if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                themeToggle.checked = true;
-            }
-
-            // Toggle theme function
-            function toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-
-                // Update toggle position
-                themeToggle.checked = newTheme === 'dark';
-            }
-
-            // Add event listener to toggle
-            themeToggle.addEventListener('change', toggleTheme);
-
-            // Tab switching functionality
-            tabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove active class from all tabs and contents
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tabContents.forEach(c => c.classList.remove('active'));
-
-                    // Add active class to clicked tab
-                    tab.classList.add('active');
-
-                    // Show corresponding content
-                    const tabId = tab.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.add('active');
-                });
-            });
-        });
-    </script>
+    <script type="text/javascript" src="../static/main.js"></script>
+    <script type="text/javascript" src="../static/snake.js"></script>
 </body>
 </html>
