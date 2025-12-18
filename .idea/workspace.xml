@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ef865a1-c44f-4180-898d-e62004340472" name="Changes" comment="updated footer - added gitignore">
+    <list default="true" id="7ef865a1-c44f-4180-898d-e62004340472" name="Changes" comment="center content">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +77,6 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.27397.106" />
         <option value="bundled-python-sdk-4e2b1448bda8-9a97661f3031-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.27397.106" />
       </set>
     </attachedChunks>
@@ -91,7 +91,8 @@
       <workItem from="1763506053358" duration="5096000" />
       <workItem from="1763513558874" duration="49000" />
       <workItem from="1763683400150" duration="403000" />
-      <workItem from="1763756465520" duration="108000" />
+      <workItem from="1763756465520" duration="217000" />
+      <workItem from="1764190273013" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Project Creation">
       <option name="closed" value="true" />
@@ -133,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763741873165</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="center content">
+      <option name="closed" value="true" />
+      <created>1763756677249</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1763756677249</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +154,7 @@
     <MESSAGE value="Added logo image" />
     <MESSAGE value="added discord and updated bio" />
     <MESSAGE value="updated footer - added gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated footer - added gitignore" />
+    <MESSAGE value="center content" />
+    <option name="LAST_COMMIT_MESSAGE" value="center content" />
   </component>
 </project>
